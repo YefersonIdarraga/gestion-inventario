@@ -12,8 +12,8 @@ const Header = () => {
                     <NavLink className="view" to="/">Inicio</NavLink>
                 </div>
                 <div className="log-container">
-                    <NavLink className="log" to="">Iniciar sesión</NavLink>
-                    <NavLink className="log" to="">Registrar operario</NavLink>
+                    <NavLink className="log" to="/signin">Iniciar sesión</NavLink>
+                    <NavLink className="log" to="/signup">Registrar operario</NavLink>
                 </div>
             </section>
         </header>
