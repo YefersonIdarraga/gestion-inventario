@@ -6,9 +6,14 @@ var bodyParser = require("body-parser");
 
 // USO EXPRESS
 var app = express();
-
+app.get('/api', (req, res) => {
+  res.json({
+    mensaje: "Nodejs y JWT"
+  });
+});
 // CARGA ARCHIVOS DE RUTAS
 var producto_routes = require('./routes/producto');
+var usuario_routes = require('./routes/usuario');
 
 // MIDDLEWARES
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,6 +33,7 @@ app.use((req, res, next) => {
 
 // REESCRIBIR RUTAS
 app.use('/api', producto_routes);
+app.use('/api', usuario_routes);
 
 // EXPORTAR MODULO
 module.exports = app;
