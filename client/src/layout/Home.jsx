@@ -1,4 +1,5 @@
 import Header from "../helper/Header";
+import gestion_inv from "../assets/gestion-inv.png"
 
 const Home = () => {
   return (
@@ -15,6 +16,8 @@ const Home = () => {
           ayudará a llevar un registro detallado de sus productos, ubicaciones y
           movimientos en tiempo real.
         </p>
+        <br />
+        <img src={gestion_inv} alt="" />
         <br />
         <p>
           Nuestro objetivo es simplificar el proceso de seguimiento y gestión de

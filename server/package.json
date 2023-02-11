@@ -1,21 +1,20 @@
 {
-  "name": "gestion-inventario",
+  "type": "module",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Yeferson Idarraga",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.1",
     "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.9.1"
-  },
-  "devDependencies": {
+    "mongodb": "^5.0.1",
+    "mongoose": "^6.9.1",
     "nodemon": "^2.0.20"
   }
 }
