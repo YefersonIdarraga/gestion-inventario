@@ -8,7 +8,7 @@ const FormSignup = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
-  
+
     const registro = async (e) => {
       e.preventDefault()
       const user = {
@@ -29,7 +29,7 @@ const FormSignup = () => {
                 <input type="password" name="password" id="password" placeholder="Contraseña" onChange={(e) => setPassword(e.target.value)} value={password}/>
             </div>
             <div className="login-inp-cont">
-                <input type="password" name="password" id="password" placeholder="Confirmar contraseña"/>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirmar contraseña"/>
             </div>
             <input className="signin" type="submit" name="login" id="login" value="Registrarme" onClick={registro}/>
             <Link to="/signin">Iniciar sesión</Link>
