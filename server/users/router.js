@@ -1,9 +1,15 @@
 import express from 'express';
 import { userModel } from './model.js';
 
+
 export const userRouter = express.Router();
 
 userRouter.post("/", async (req, res) => {
+   const createdUser = await userModel.create(req.body)
+   res.status(201).send(createdUser)
+})
+
+userRouter.post("/login", async (req, res) => {
    const createdUser = await userModel.create(req.body)
    res.status(201).send(createdUser)
 })

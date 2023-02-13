@@ -49,6 +49,27 @@ body{
   color: #720000;
 }
 
+.registered{
+  height: 100vh;
+  font-size: 50px;
+  text-shadow: 3px 3px 3px black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registered a{
+  color: white;
+  transition: .3s ease-in-out;
+}
+
+.registered a:hover{
+  color: var(--color2);
+  transition: .3s ease-in-out;
+}
+
 /* Header */
 
 header{

@@ -7,6 +7,7 @@ import Map from './layout/Map'
 import Error404 from './helper/Error404'
 import Signin from './layout/Signin'
 import Signup from './layout/Signup'
+import Registered from './layout/Registered'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/map' element={<Map />}/>
       <Route path='/signin' element={<Signin />}/>
       <Route path='/signup' element={<Signup />}/>
+      <Route path='/registered' element={<Registered />}/>
       <Route path='*' element={<Error404 />}/>
     </Routes>
   </BrowserRouter>

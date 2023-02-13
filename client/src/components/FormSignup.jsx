@@ -13,7 +13,7 @@ const FormSignup = () => {
   const pPass = document.getElementById('password-est')
   const pCpass = document.getElementById('cpassword-est')
   const est = document.getElementById('est')
-  const lettersNum = /^[a-zA-Z0-9#-\s]{1,30}$/;
+  const lettersNum = /^[a-zA-Z0-9\s]{1,30}$/;
   const validation = (e) => {
     switch (e.target.name){
       case "username":
@@ -38,20 +38,23 @@ const FormSignup = () => {
         }
       break;  
     }
+    if (lettersNum.test(formName.value, formPass.value) && formPass.value == formCpass.value ){
+      est.textContent=""
+    }
   }
   inputs.forEach((input)=>{
     input.addEventListener('keyup', validation);
     input.addEventListener('blur', validation);
   });
   //Registro
-    const [name, setName] = useState("")
+    const [username, setName] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
     const registro = async (e) => {
       e.preventDefault()
       const user = {
-        name,
+        username,
         password
       }
       if (!lettersNum.test(formName.value, formPass.value) || formPass.value != formCpass.value ){
@@ -59,7 +62,7 @@ const FormSignup = () => {
         est.textContent="Rellene los campos correctamente"
       } else {
         await axios.post(urlRegistro, user)
-        navigate('/')
+        navigate('/registered')
       }
     }
   return (
@@ -67,7 +70,7 @@ const FormSignup = () => {
         <h1>Registro</h1>
         <form action="" id="login-form">
             <div className="login-inp-cont">
-                <input type="text" name="username" id="username" placeholder="Usuario" onChange={(e) => setName(e.target.value)} value={name}/>
+                <input type="text" name="username" id="username" placeholder="Usuario" onChange={(e) => setName(e.target.value)} value={username}/>
                 <p id='username-est'></p>
             </div>
             <div className="login-inp-cont">
